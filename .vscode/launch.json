@@ -5,6 +5,7 @@
             "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
+            "program": "${workspaceRoot}/result.out",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
