@@ -1,4 +1,4 @@
-#include "../model/waiting.h"
+#include "./waiting.h"
 
 // 类外初始化静态成员
 std::unordered_map<int, Request> EventBase::requestStatus;

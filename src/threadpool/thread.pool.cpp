@@ -1,4 +1,4 @@
-#include "../threadpool/threadpool.h"
+#include "./threadpool.h"
 
 ThreadPool::ThreadPool(int threadNum) : m_threadNum(threadNum){
     // 初始化互斥量
