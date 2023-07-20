@@ -1,4 +1,4 @@
-#include "threadpool.h"
+#include "../threadpool/threadpool.h"
 
 ThreadPool::ThreadPool(int threadNum) : m_threadNum(threadNum){
     // 初始化互斥量
@@ -23,7 +23,7 @@ ThreadPool::ThreadPool(int threadNum) : m_threadNum(threadNum){
         }
         ret = pthread_detach(m_threads[i]);
         ++tnum;
-        usleep(1000);     // 为了在线程中记录线程序号
+        usleep(1000);     // 为了在线程中记录线程outHead序号
         if(ret != 0){
             delete[] m_threads;
             throw std::runtime_error("设置脱离线程失败");

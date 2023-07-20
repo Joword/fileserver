@@ -22,7 +22,7 @@
 #include <sys/sendfile.h>
 #include <unistd.h>
 
-#include "../message/message.h"
+#include "../model/message.h"
 #include "../utils/utils.h"
 
 // 所有事件的基类

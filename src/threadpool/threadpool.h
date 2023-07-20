@@ -11,7 +11,7 @@
 #include <pthread.h>
 #include <semaphore.h>
 
-#include "model/waiting.h"
+#include "../model/waiting.h"
 
 static int tnum = 0;
 class ThreadPool{
