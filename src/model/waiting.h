@@ -27,25 +27,16 @@
 
 // 所有事件的基类
 class EventBase{
-public:
-    EventBase(){
-
-    }
-    virtual ~EventBase(){
-
-    }
-protected:
-    // 保存文件描述符对应的请求的状态，因为一个连接上的数据可能非阻塞一次读取不完，所以保存到这里，当该连接上有新数据时，可以继续读取并处理
-    static std::unordered_map<int, Request> requestStatus;
-
-    // 保存文件描述符对应的发送数据的状态，一次proces中非阻塞的写数据可能无法将数据全部传过去，所以保存当前数据发送的状态，可以继续传递数据
-    static std::unordered_map<int, Response> responseStatus;
-
-public:
-    // 不同类型事件中重写该函数，执行不同的处理方法
-    virtual void process(){
-        
-    }
+    public:
+        EventBase(){}
+        virtual ~EventBase(){}
+        // 不同类型事件中重写该函数，执行不同的处理方法
+        virtual void process(){}
+    protected:
+        // 保存文件描述符对应的请求的状态，因为一个连接上的数据可能非阻塞一次读取不完，所以保存到这里，当该连接上有新数据时，可以继续读取并处理
+        static std::unordered_map<int, Request> requestStatus;
+        // 保存文件描述符对应的发送数据的状态，一次proces中非阻塞的写数据可能无法将数据全部传过去，所以保存当前数据发送的状态，可以继续传递数据
+        static std::unordered_map<int, Response> responseStatus;
 
 };
 
